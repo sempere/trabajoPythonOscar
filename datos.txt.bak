@@ -1,0 +1,22 @@
+c1;Fuente;50;10.5;7
+c2;PB;50;10.5;7
+c3;TG;50;10.5;7
+c4;CPU;50;10.5;7
+c5;RAM;50;10.5;7
+c6;Disco;50;10.5;8
+c10;Fuente;10;10.5;10
+c20;PB;10;10.5;10
+c30;TG;10;10.5;10
+c40;CPU;10;10.5;10
+c50;RAM;10;10.5;10
+c60;Disco;10;10.5;9
+---
+e1;Fuente-c1;PB-c2;TG-c3;CPU-c4;RAM-c5;Disco-c6
+---
+e2;Fuente-c1;PB-c2;TG-c3;CPU-c4;RAM-c5;Disco-c6
+---
+dist1;Barcelona;10;Consell de Cent 123, Local 4, 08015, Barcelona, Barcelona
+dist2;Sevilla;4;Avenida de José Laguillo, Sevilla, Sevilla
+---
+dist1;e3;5
+---
