@@ -1,9 +1,4 @@
-# Modulos.....
-import sys
-import colorama
-from collections import namedtuple
-from colorama import Fore
-colorama.init()
+
 
 from componentes import *
 from equipos import *
