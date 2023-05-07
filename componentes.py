@@ -14,8 +14,8 @@ def componentes():
     opcion = pedirOpcion(3)
     
     if opcion == 0: return
-    elif opcion == 1:    alta(componentes_list)            
-    elif opcion == 2:    menuModificacion(componentes_list)
+    elif opcion == 1:    alta()            
+    elif opcion == 2:    menuModificacion()
      
 def alta(componentes_list):
     componente = especificarValoresComponente(componentes_list)
@@ -27,7 +27,7 @@ def alta(componentes_list):
     if preguntaYN("¿Desea introducir otro componente? y/n:") == False: #Añadir otro componente
         return 0
     
-def menuModificacion(componentes_list):
+def menuModificacion():
     printMenu("Selecciona una opción:")
     printMenu("1. Modificar componente a partir del identificador")
     printMenu("2. Listar componentes")
@@ -35,12 +35,12 @@ def menuModificacion(componentes_list):
     opcion = pedirOpcion(3)
     
     if opcion == 0: return
-    if opcion == 1: modificacion(componentes_list)
+    if opcion == 1: modificacion()
     if opcion == 2: 
         printLista(componentes_list, "Listado de componentes:")
-        modificacion(componentes_list)
+        modificacion()
     
-def modificacion(componentes_list):   
+def modificacion():   
     componenteAux = ()
     identificador = pedirId(False)
     for componente in componentes_list:

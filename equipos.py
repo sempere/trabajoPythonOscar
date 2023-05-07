@@ -14,10 +14,10 @@ def equipos():
     opcion = pedirOpcion(3)
     
     if opcion == 0:      return
-    elif opcion == 1:    alta(equipos_disponibles)            
-    elif opcion == 2:    menuModificacion(equipos_disponibles)
+    elif opcion == 1:    alta()            
+    elif opcion == 2:    menuModificacion()
      
-def alta(equipos_disponibles):
+def alta():
     equipo = especificarValoresEquipo(equipos_disponibles)
     if  equipo == -1:
         return
@@ -27,7 +27,7 @@ def alta(equipos_disponibles):
     if preguntaYN("¿Desea introducir otro equipo? y/n:") == False: #Añadir otro equipo
         return 0
     
-def menuModificacion(equipos_disponibles):
+def menuModificacion():
     printMenu("Selecciona una opción:")
     printMenu("1. Modificar equipo a partir del identificador")
     printMenu("2. Listar equipos")
@@ -35,12 +35,12 @@ def menuModificacion(equipos_disponibles):
     opcion = pedirOpcion(3)
     
     if opcion == 0: return
-    if opcion == 1: modificacion(equipos_disponibles)
+    if opcion == 1: modificacion()
     if opcion == 2: 
         printLista(equipos_disponibles, "Listado de equipos:")
-        modificacion(equipos_disponibles)
+        modificacion()
     
-def modificacion(equipos_disponibles):   
+def modificacion():   
     equipoAux = ()
     identificador = pedirId(False)
     for equipo in equipos_disponibles:
