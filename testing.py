@@ -44,7 +44,7 @@ equipo3.addComponente('Disco', componentes_list[11])
 equipos_disponibles.append(equipo3)
 
 #Prueba de distribuidores
-dist = Distribuidor(id='dist1', nombre='Barcelona', tiempoEntrega=10, direccion='Consell de Cent 123, Local 4, 08015, Barcelona, Barcelona')
+dist = Distribuidor(id='dist1', nombre='InforRapid', tiempoEntrega=10, direccion='Consell de Cent 123, Local 4, 08015, Barcelona, Barcelona')
 distribuidores_list.append(dist)
-dist1 = Distribuidor(id='dist2', nombre='Sevilla', tiempoEntrega=4, direccion='Avenida de José Laguillo, Sevilla, Sevilla')
+dist1 = Distribuidor(id='dist2', nombre='MediaMarkt', tiempoEntrega=4, direccion='Calle Ricard Vicent n9 El Puig Valencia 46540')
 distribuidores_list.append(dist1)

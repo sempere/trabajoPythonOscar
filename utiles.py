@@ -62,8 +62,9 @@ def printLista(lista, msg=""):
     if len(lista) == 0:
         print(Fore.GREEN + "No hay elementos")
     else:
-        print(Fore.GREEN)
-        print(*lista, sep='\n')
+        for e in lista:
+            print(Fore.GREEN + e.__str__())
+        #print(*lista, sep='\n')
     print("")
   
 #Funcion que pide un id al usuario por teclado, y sirve tanto para modificar componentes/equipos/dist

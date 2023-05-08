@@ -56,11 +56,11 @@ class Equipo:
         return self.componentes[tipo]
     def __str__(self):
         cadena="Equipo id: " + self.id + "\n"
-        cadena += "\tComponentes: ("
-        for tipo in self.componentes:
+        cadena += "\tComponentes: \n\t\t"
+        for i, tipo in enumerate(self.componentes):
             cadena += self.componentes[tipo].__str__()
-            cadena += ","
-        cadena += ")\n"
+            if i != len(self.componentes) - 1:
+                cadena += "\n\t\t"
         return cadena
         
 #Definicion de la clase componente
@@ -85,5 +85,5 @@ class Despacho:
         return self.tiempoRestante 
     def __str__(self):
         cadena="Despachando equipo:\n"
-        cadena += "\t" + self.equipo.__str__() +"\nTiempo restante en días: "+str(self.tiempoRestante) + ""
+        cadena += "\t" + self.equipo.__str__() +"\n\t-----Tiempo restante en días: "+str(self.tiempoRestante) + ""
         return cadena
