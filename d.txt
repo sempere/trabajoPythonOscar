@@ -1,4 +1,4 @@
-comp1;Fuente;50;10.5;7
+comp1;Fuente;40;10.5;7
 comp2;PB;50;10.5;7
 comp3;TG;50;10.5;7
 comp4;CPU;50;10.5;7

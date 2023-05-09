@@ -81,7 +81,7 @@ def especificarValores(distribuidores_list, dist=(), alta=True):
     if alta:
         print("Inicio alta")          
         identificador = pedirId(comprobacion=True, debeExistir=False, lista=distribuidores_list) #Identificador
-        if identificador < 0:
+        if identificador == -1 or identificador == -2:
             return -1
         else:
             distRes.id = identificador

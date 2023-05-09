@@ -17,7 +17,7 @@ def componentes():
     elif opcion == 1:    alta()            
     elif opcion == 2:    menuModificacion()
      
-def alta(componentes_list):
+def alta():
     componente = especificarValoresComponente(componentes_list)
     if  componente == -1:
         return
@@ -89,7 +89,7 @@ def especificarValoresComponente(componentes_list, componente=(), alta=True):
     if alta:
         print(Fore.CYAN + "Inicio alta")          
         identificador = pedirId(comprobacion=True, debeExistir=False, lista=componentes_list) #Identificador
-        if identificador < 0:
+        if identificador == -1 or identificador == -2:
             return -1
         else:
             componenteRes.id = identificador
@@ -104,10 +104,10 @@ def especificarValoresComponente(componentes_list, componente=(), alta=True):
             if int(opcion) in list(range(len(tiposComponentes)+1)):
                 componenteRes.tipo = tiposComponentes[int(opcion)]
             else:              
-                printError("Ingresa un tipo válido1")
+                printError("Ingresa un tipo válido")
                 return -1
         except:
-            printError("Ingresa un tipo válido2")
+            printError("Ingresa un tipo válido")
             return -1
         
     if alta == False:

@@ -1,0 +1,22 @@
+comp1;Fuente;10.5;7
+comp2;PB;50;10.5;7
+comp3;TG;50;10.5;7
+comp4;CPU;50;10.5;7
+comp5;RAM;50;10.5;7
+comp6;Disco;50;10.5;8
+comp10;Fuente;10;10.5;10
+comp20;PB;10;10.5;10
+comp30;TG;10;10.5;10
+comp40;CPU;10;10.5;10
+comp50;RAM;10;10.5;10
+comp60;Disco;10;10.5;9
+---
+equipo2;Fuente-comp1;PB-comp2;TG-comp3;CPU-comp4;RAM-comp5;Disco-comp6
+---
+equipo3;Fuente-comp1;PB-comp2;TG-comp3;CPU-comp4;RAM-comp5;Disco-comp60
+---
+dist1;InforRapid;10;Consell de Cent 123, Local 4, 08015, Barcelona, Barcelona
+dist2;MediaMarkt;4;C/ de Ramon Turró, 169, B, 08005 Barcelona
+---
+dist1;equipo1;Fuente-comp1;PB-comp2;TG-comp3;CPU-comp4;RAM-comp5;Disco-comp6;5
+---

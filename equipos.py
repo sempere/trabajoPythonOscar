@@ -82,7 +82,7 @@ def especificarValoresEquipo(equipos_disponibles, equipo=(), alta=True):
     if alta:
         print("Inicio alta")          
         identificador = pedirId(comprobacion=True, debeExistir=False, lista=equipos_disponibles) #Identificador
-        if identificador < 0:
+        if identificador == -1 or identificador == -2:
             return -1
         else:
             equipoRes.id = identificador
