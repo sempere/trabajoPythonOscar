@@ -56,26 +56,40 @@ def cargar():
                         else:
                             componentes_list_aux.append(comp)
                     elif modos[indiceModo] == 'equipos_disponibles':
-                        equipos_disponibles_aux.append(leerEquipo(elementos, componentes_list_aux))
+                        eq = leerEquipo(elementos, componentes_list_aux)
+                        if eq == -1:
+                            return
+                        else:
+                            equipos_disponibles_aux.append(eq)
                     elif modos[indiceModo] == 'equipos_despachados':
-                        equipos_despachados_aux.append(leerEquipo(elementos, componentes_list_aux))
+                        eq = leerEquipo(elementos, componentes_list_aux)
+                        if eq == -1:
+                            return
+                        else:
+                            equipos_despachados_aux.append(eq)
                     elif modos[indiceModo] == 'distribuidores':
-                        distribuidores_list_aux.append(leerDistribuidor(elementos))
+                        dist = leerDistribuidor(elementos)
+                        if dist == -1:
+                            return
+                        else:
+                            distribuidores_list_aux.append(dist)
                     elif modos[indiceModo] == 'despachos':
                         despachoNuevo = leerDespacho(elementos, distribuidores_list_aux, componentes_list_aux)
-                        '''
-                        despacho = despachos_aux.get(despachoNuevo.distribuidor.id)
-                        if despacho is None:
-                            despachos_aux[despachoNuevo.distribuidor.id] = []
-                        despachos_aux[despachoNuevo.distribuidor.id].append(despachoNuevo)
-                        '''
+                        if despachoNuevo == -1:
+                            return 
+                        else:                            
+                            despacho = despachos_aux.get(despachoNuevo.distribuidor.id)
+                            if despacho is None:
+                                despachos_aux[despachoNuevo.distribuidor.id] = []
+                            despachos_aux[despachoNuevo.distribuidor.id].append(despachoNuevo)
+                        
         #Si todo ha ido bien, actualizamos las estructuras del proyecto
         inicializa()
         componentes_list.extend(componentes_list_aux)
         equipos_disponibles.extend(equipos_disponibles_aux)
         equipos_despachados.extend(equipos_despachados_aux)
         distribuidores_list.extend(distribuidores_list_aux)
-        #despachos.update(despachos_aux)
+        despachos.update(despachos_aux)
         printLog("Carga correcta de los datos del fichero: " + fichero)    
     except Exception as e:
         printError("Error en la apertura del fichero con nombre: " + fichero + " " + str(e))
@@ -174,18 +188,19 @@ def datosDespacho(despacho):
     cadena += str(despacho.tiempoRestante) + "\n"
     return cadena
 def leerDespacho(elementos, distribuidores_list_aux, componentes_list_aux):
-    pass
-    '''
-    despacho = Despacho()
-    despacho.distribuidor = getElemento(distribuidores_list_aux, elementos[0])
-    equipo = Equipo(elementos[1])
-    for i in range(2,8):
-        tuplaComponente = elementos[i].split("-")
-        componente = getElemento(componentes_list_aux, tuplaComponente[1].rstrip())
-        equipo.addComponente(tuplaComponente[0], componente)
-    despacho.equipo = equipo
-    despacho.tiempoRestante = int(elementos[8])
-    return despacho
-    '''
+    if len(elementos) != 9:
+        printError("Error en la lectura del despacho, número de elementos incorrecto")
+        return -1
+    else:
+        despacho = Despacho()
+        despacho.distribuidor = getElemento(distribuidores_list_aux, elementos[0])
+        equipo = Equipo(elementos[1])
+        for i in range(2,8):
+            tuplaComponente = elementos[i].split("-")
+            componente = getElemento(componentes_list_aux, tuplaComponente[1].rstrip())
+            equipo.addComponente(tuplaComponente[0], componente)
+        despacho.equipo = equipo
+        despacho.tiempoRestante = int(elementos[8])
+        return despacho
 def separador():
     return "---\n"

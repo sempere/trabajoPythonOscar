@@ -16,12 +16,11 @@ def inicializa():
     distribuidores_list.clear()
     despachos.clear()
 
-def escribeComponentes(compList):
-    componentes_list = compList
+
 
 #Definicion de la clase componente
 class Componente:
-    def __init__(self, id='nullll', tipo='', peso=1, coste=1, cantidad=1):
+    def __init__(self, id='null', tipo='', peso=1, coste=1, cantidad=1):
         self.id = id
         self.tipo = tipo
         self.peso = peso
